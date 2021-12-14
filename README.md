@@ -9,14 +9,14 @@ Creacion de un menu responsive con diseño Mobile First.
 ## Screenshots
 
 Vista Mobile
-![Mobile](https://github.com/Lema1/side-menu/blob/main/public/screenshot/mobile.png?raw=true)
+![Mobile](https://github.com/Lema1/Responsive-Side-Menu/blob/main/public/screenshot/mobile.png?raw=true)
 
 Vista Tablet
-![Tablet](https://github.com/Lema1/side-menu/blob/main/public/screenshot/tablet.png?raw=true)
+![Tablet](https://github.com/Lema1/Responsive-Side-Menu/blob/main/public/screenshot/tablet.png?raw=true)
 
 Vista Desktop
-![Desktop](https://github.com/Lema1/side-menu/blob/main/public/screenshot/desktop.png?raw=true)
-![Desktop-1](https://github.com/Lema1/side-menu/blob/main/public/screenshot/desktop-1.png?raw=true)
+![Desktop](https://github.com/Lema1/Responsive-Side-Menu/blob/main/public/screenshot/desktop.png?raw=true)
+![Desktop-1](https://github.com/Lema1/Responsive-Side-Menu/blob/main/public/screenshot/desktop-1.png?raw=true)
 
 ## Installation
 
