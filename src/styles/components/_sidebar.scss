@@ -1,0 +1,257 @@
+.sidebar {
+  &__bars {
+    position: fixed;
+    top: $mb-1;
+    left: $mb-1;
+    width: $mb-4;
+    height: $mb-4;
+    padding: 0.2rem;
+    text-align: center;
+    background-color: $c-primary;
+    color: $c-secondary;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: $z-header;
+    svg {
+      width: 20px;
+    }
+  }
+
+  &__container {
+    position: fixed;
+    background-color: $c-primary;
+    width: 65%;
+    height: 94%;
+    overflow-y: scroll;
+    z-index: $z-header;
+    &.hide {
+      left: -100%;
+    }
+    &.show {
+      left: 0;
+      animation-name: slideSidebar;
+      animation-duration: 0.5s;
+    }
+  }
+  &__overlay {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    &.hide {
+      display: none;
+    }
+    &.show {
+      display: block;
+      animation: none;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    padding: 4px 2px;
+    display: inline-block;
+    color: $c-secondary;
+    margin: $mb-1 0 $mb-1 $mb-1;
+    svg {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: $mb-1;
+    }
+    span {
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+  }
+
+  &__list {
+    color: $c-secondary;
+    &--item {
+      width: 100%;
+      height: 50px;
+      display: inline-block;
+      padding: $mb-1 0 0 $mb-2;
+      cursor: pointer;
+      a {
+        display: flex;
+      }
+      &:hover {
+        background: $c-primary-dark;
+      }
+      svg {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $mb-1;
+      }
+      span {
+        width: 50%;
+        font-size: 0.9em;
+      }
+      &.submenu {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 33.333333%;
+        svg:last-of-type {
+          margin-right: $mb-2;
+          width: 15px;
+          height: 15px;
+          margin-left: auto;
+          transform-origin: rotate(0deg);
+        }
+        &.active {
+          color: $c-secondary;
+          svg:last-of-type {
+            transform: rotate(180deg);
+          }
+        }
+        &.not-active {
+          svg:last-of-type {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+    &--submenu {
+      display: none;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+      &--item {
+        font-size: 0.85em;
+        margin-bottom: $mb-1;
+        cursor: pointer;
+        padding: 3px 2px;
+      }
+      &.show {
+        display: block;
+        margin: $mb-1 0 0 $mb-5;
+        transition: all 0.4s ease;
+      }
+    }
+    li {
+      &:last-of-type {
+        margin-bottom: 1rem;
+      }
+    }
+    .active {
+      background-color: $c-primary-dark;
+    }
+  }
+  a {
+    width: 100%;
+  }
+}
+
+/*== ANIMACION SIDEBAR ==*/
+@keyframes slideSidebar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/*== MEDIUM MOBILE ==*/
+@media (min-width: $mq-m) {
+  .sidebar {
+    &__container {
+      width: 50%;
+    }
+  }
+}
+
+/*== TABLET ==*/
+@media (min-width: $mq-l) {
+  .sidebar {
+    &__bars {
+      left: -100%;
+      display: none;
+    }
+    &__logo {
+      span {
+        display: none;
+      }
+    }
+    &__container {
+      width: 10vw;
+      height: 100%;
+      display: block;
+      top: 0;
+      overflow: hidden;
+      &.hide {
+        left: 0;
+      }
+      &.show {
+        left: 0;
+        animation-name: none;
+      }
+    }
+    &__overlay {
+      display: none;
+      &.hide {
+        display: none;
+      }
+      &.show {
+        display: none;
+      }
+    }
+    &__list {
+      &--item {
+        span {
+          display: none;
+        }
+      }
+      &--submenu {
+        background: $c-primary;
+        &--item {
+          &:first-child {
+            padding-top: $mb-1;
+          }
+          padding: $mb-1 $mb-1 $mb-1 $mb-1;
+        }
+        &.show {
+          display: block;
+          position: fixed;
+          margin-left: 10vw;
+          z-index: 999999;
+          margin-top: -40px;
+        }
+      }
+    }
+  }
+}
+
+/*== DESKTOP ==*/
+@media (min-width: $mq-ls) {
+  .sidebar {
+    &__logo {
+      span {
+        display: inline-block;
+      }
+    }
+    &__container {
+      width: 20vw;
+      height: 100%;
+    }
+    &__list {
+      &--item {
+        span {
+          display: inline-block;
+        }
+      }
+      &--submenu {
+        &.show {
+          display: contents;
+        }
+        &--item {
+          padding: 0 $mb-1 $mb-1 $mb-5;
+        }
+      }
+    }
+  }
+}

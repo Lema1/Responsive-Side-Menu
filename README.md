@@ -1,8 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Responsive Side-Menu
 
-## Getting Started
+Creacion de un menu responsive con diseño Mobile First.
 
-First, run the development server:
+## Tech Stack
+
+**Client:** React, Next Js, Sass, Font Awesome
+
+## Screenshots
+
+Vista Mobile
+![Mobile](https://github.com/Lema1/side-menu/blob/main/public/screenshot/mobile.png?raw=true)
+
+Vista Tablet
+![Tablet](https://github.com/Lema1/side-menu/blob/main/public/screenshot/tablet.png?raw=true)
+
+Vista Desktop
+![Desktop](https://github.com/Lema1/side-menu/blob/main/public/screenshot/desktop.png?raw=true)
+![Desktop-1](https://github.com/Lema1/side-menu/blob/main/public/screenshot/desktop-1.png?raw=true)
+
+## Installation
+
+Instalar proyecto con npm
+
+En primer lugar, ejecute el servidor de desarrollo:
 
 ```bash
 npm run dev
@@ -10,25 +30,54 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage/Examples
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Array con los datos del menu
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```javascript
+"SidebarData.js";
+export const SidebarData = [
+  {
+    title: "Home",
+    path: "/",
+    icon: "circle",
+    prefix: "fas",
+  },
+  {
+    title: "Menu 1",
+    icon: "circle",
+    prefix: "fas",
+    path: "#!",
+    submenu: [
+      {
+        title: "SubMenu 1",
+        path: "/menu1/submenu1",
+        icon: "circle",
+        prefix: "fas",
+      },
+      {
+        title: "SubMenu 2",
+        path: "/menu1/submenu2",
+        icon: "circle",
+        prefix: "fas",
+      },
+    ],
+  },
+  {
+    title: "Menu 2",
+    path: "/menu2",
+    icon: "circle",
+    prefix: "fas",
+  },
+];
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Color Reference
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Color              | Hex                                                              |
+| ------------------ | ---------------------------------------------------------------- |
+| Primary Color      | ![#691ae7](https://via.placeholder.com/10/691ae7?text=+) #0a192f |
+| Secondary Color    | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) #f8f8f8 |
+| Third Color        | ![#000000](https://via.placeholder.com/10/000000?text=+) #00b48a |
+| Fourth Color       | ![#e6e8e9](https://via.placeholder.com/10/e6e8e9?text=+) #00d1a0 |
+| Dark Primary Color | ![#5016af](https://via.placeholder.com/10/5016af?text=+) #00d1a0 |

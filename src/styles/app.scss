@@ -1,0 +1,91 @@
+@charset 'UTF-8';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+@import "var";
+@import "components/header";
+@import "components/sidebar";
+
+html,
+body {
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 0;
+  font-family: $font-family;
+  background-color: $c-secondary;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+span {
+  color: inherit;
+}
+
+main {
+  width: 100%;
+  min-height: 87vh;
+  padding: $mb-1;
+  background-color: $c-fourth;
+}
+
+.container {
+  min-height: 84vh;
+  background-color: $c-secondary;
+  padding: $mb-1;
+  text-align: center;
+}
+
+footer {
+  clear: both;
+  position: relative;
+  bottom: 0;
+  height: 1.6rem;
+  width: 100%;
+  background-color: $c-primary;
+  text-align: center;
+  color: $c-secondary;
+  font-size: 0.8em;
+  justify-content: center;
+}
+
+@media (min-width: $mq-l) {
+  main {
+    min-height: 89vh;
+  }
+  .main-content {
+    width: 90vw;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media (min-width: $mq-ls) {
+  html,
+  body {
+    overflow: hidden;
+  }
+  main {
+    height: calc(89vh - 0.1rem);
+    min-height: 80vh;
+    overflow-y: scroll !important;
+  }
+  .main-content {
+    width: 80vw;
+    position: absolute;
+    right: 0;
+  }
+}

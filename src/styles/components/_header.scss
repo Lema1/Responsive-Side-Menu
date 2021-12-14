@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+  height: $header;
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding: $mb-1;
+  background-color: $c-secondary;
+  color: $c-primary;
+  font-weight: 600;
+  text-align: center;
+  z-index: $z-header;
+}
